@@ -109,7 +109,7 @@ def draw(images, labels, boxes, scores, thrh = 0.6, path = ""):
             draw.rectangle(list(b), outline='red',)
             draw.text((b[0], b[1]), text=f"label: {lab[j].item()} {round(scrs[j].item(),2)}", font=ImageFont.load_default(), fill='blue')
         if path == "":
-            im.save(f'results_{i}.jpg')
+            im.save(f'./results/results_{i}.jpg')
         else:
             im.save(path)
             
