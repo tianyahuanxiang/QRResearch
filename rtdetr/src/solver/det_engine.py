@@ -81,7 +81,7 @@ def train_one_epoch(model: torch.nn.Module, criterion: torch.nn.Module,
 
         metric_logger.update(loss=loss_value, **loss_dict_reduced)
         metric_logger.update(lr=optimizer.param_groups[0]["lr"])
-        break
+        #break
     # gather the stats from all processes
     metric_logger.synchronize_between_processes()
     print("Averaged stats:", metric_logger)
@@ -153,7 +153,7 @@ def evaluate(model: torch.nn.Module, criterion: torch.nn.Module, postprocessors,
         #         res_pano[i]["image_id"] = image_id
         #         res_pano[i]["file_name"] = file_name
         #     panoptic_evaluator.update(res_pano)
-        break
+        #break
     # gather the stats from all processes
     metric_logger.synchronize_between_processes()
     print("Averaged stats:", metric_logger)
